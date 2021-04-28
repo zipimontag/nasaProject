@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const jwt=require('jsonwebtoken');
 const userRouter = require('./routes/userRouter');
 const pictureRouter = require('./routes/pictureRouter');
+
 const cors=require('cors')
 const app = express();
 app.use(bodyParser.json({ limit: "500mb", extended: false }));

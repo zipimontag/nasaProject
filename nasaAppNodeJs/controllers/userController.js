@@ -39,7 +39,7 @@ const getLoginUser = async (req, res) => {
         console.log(req.body.userPassword);
         if (loginUser.length!==0) {
             console.log(loginUser);
-            const token = jwt.sign({userName:req.body.userName, userPass: req.body.userPassword }, process.env.SECRET);
+            const token = jwt.sign({userName:req.body.userName, userPassword: req.body.userPassword }, process.env.SECRET);
             console.log('you find');
             console.log('token: '+token);
            return res.status(200).json({ myToken: token });
