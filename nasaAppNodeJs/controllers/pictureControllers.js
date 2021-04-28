@@ -39,8 +39,13 @@ const getAllPicture=async(req,res)=>{
     try{
         console.log(JSON.stringify(req.headers['authorization']));
         const userPicture=await userSchema.find({userName:req.headers['authorization'].userName,userPassword:req.headers['authorization'].userPassword}).populate('pictures')
-        console.log('get all pictures');
-        console.log('user'+userPicture);
+    //     const userPicture=await userSchema.find({userName:req.headers['authorization'].userName,userPassword:req.headers['authorization'].userPassword})
+    //    console.log("user:"+JSON.stringify(req.headers['authorization'])._id);
+    //    console.log("user:"+userPicture);
+    //     console.log(`user.id: ${userPicture._id}`);
+    //     const pictures=await pictureSchema.find({user:userPicture._id})
+    //     console.log('get all pictures');
+        console.log('pictures'+userPicture);
         res.status(200).json({pictures:userPicture})
     }
     catch(err){
